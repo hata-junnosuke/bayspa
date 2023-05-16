@@ -21,7 +21,7 @@ export default async function Page() {
   const players = await getPlayers();
   return (
     <main className="mx-2 sm:mx-4 relative">
-      <YoutubePlayer />
+        <YoutubePlayer />
       <h2 className='mb-6 text-gray-400 text-xs'>List Players</h2>
       { /* 3. Client ComponentsのSuspenseの使用 */ }
       {/* <ErrorBoundary fallback={<FetchError />}> */}

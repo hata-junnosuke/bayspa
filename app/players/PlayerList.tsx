@@ -14,7 +14,7 @@ const fetcher = (url: string) => fetch(url).then(async (res) => {
   return players;
 });
 
-const PlayerList = ({ initialState }) => {
+const PlayerList: React.FC<Props> = ({ initialState }) => {
   // 2. クライアントサイドでのデータ取得
   const { data } = useSWR('/api/players', fetcher, { suspense: true, fallbackData: initialState })
   return (
@@ -28,7 +28,7 @@ type PlayerProps = {
   item: Player;
 }
 
-const PlayerItem = ({ item }) => {
+const PlayerItem: React.FC<PlayerProps> = ({ item }) => {
   return (
     <div className="bg-gray-100 rounded-lg relative p-5 pt-8">
       <h3 className="text-pink-500 hover:text-pink-700 text-lg md:text-xl font-semibold mb-3 break-all underline underline-offset-2">{item.name}</h3>
