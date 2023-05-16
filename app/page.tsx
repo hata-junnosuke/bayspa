@@ -18,7 +18,7 @@ export const metadata = {
 
 export default async function Page() {
   // 2. APIを用いたデータ取得
-  const players = await getPlayers();
+  // const players = await getPlayers();
   return (
     <main className="mx-2 sm:mx-4 relative">
         <YoutubePlayer />
@@ -26,7 +26,7 @@ export default async function Page() {
       { /* 3. Client ComponentsのSuspenseの使用 */ }
       {/* <ErrorBoundary fallback={<FetchError />}> */}
         {/* <Suspense fallback={<Loading />}> */}
-          <PlayerList initialState={players} />
+          <PlayerList/>
         {/* </Suspense> */}
       {/* </ErrorBoundary> */}
 
@@ -34,9 +34,9 @@ export default async function Page() {
   )
 }
 
-export const getPlayers = async () => {
-  const res = await fetch(`${apiUrl}/players`, { cache: 'no-store' });
-  const data = await res.json();
-  const players = zPlayers.parse(data);
-  return players;
-};
+// export const getPlayers = async () => {
+//   const res = await fetch(`${apiUrl}/players`, { cache: 'no-store' });
+//   const data = await res.json();
+//   const players = zPlayers.parse(data);
+//   return players;
+// };

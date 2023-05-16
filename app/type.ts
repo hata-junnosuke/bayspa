@@ -6,8 +6,8 @@ export const zPlayer = z.object({
   number: z.number().int(),
   fight_song: z.string(),
   explanation: z.string(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
+  createdAt: z.string().datetime(),
+  updatedAt: z.string().datetime(),
 });
 export const zPlayers = z.array(zPlayer);
 export const zUpsertPlayer = z.object({
