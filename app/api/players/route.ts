@@ -8,5 +8,6 @@ export const dynamic = 'force-dynamic';
 export async function GET() {
   // 3. DBからノート一覧を取得
   const players = await prisma.player.findMany();
+  console.log(players)
   return NextResponse.json(players)
 }
