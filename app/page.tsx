@@ -26,7 +26,7 @@ export default async function Page() {
       { /* 3. Client ComponentsのSuspenseの使用 */ }
       {/* <ErrorBoundary fallback={<FetchError />}> */}
         {/* <Suspense fallback={<Loading />}> */}
-          <PlayerList/>
+          {/* <PlayerList initialState={players} /> */}
         {/* </Suspense> */}
       {/* </ErrorBoundary> */}
 
