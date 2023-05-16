@@ -9,5 +9,4 @@ export async function GET() {
   // 3. DBからノート一覧を取得
   const players = await prisma.player.findMany();
   return NextResponse.json(players)
-  console.log(players)
 }
